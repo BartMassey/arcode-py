@@ -1,4 +1,4 @@
-from distutils.core import setup
+from setuptools import setup, find_packages
 
 with open('README') as file:
     __desc__ = file.read()
@@ -20,15 +20,16 @@ module_description = \
 
 setup(
     name='arcode',
-    version='0.3',
+    version='0.3.1',
     description=module_description,
     author='Michael Dipperstein',
     author_email='mdipperstein@gmail.com',
     license='GPL',
     url='https://michaeldipperstein.github.io/arithmetic.html',
-    packages=['arcode', ],
+    packages=find_packages(),
     package_data={'arcode': ['COPYING', 'README']},
     platforms='All platforms',
     long_description=__desc__,
     classifiers=__classifiers__,
+    install_requires=['bitfile'],
 )
